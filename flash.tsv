@@ -1,0 +1,6 @@
+#opt	Id	Name		Type		Device	Offset		Binary
+-	0x01	fsbl_boot	Binary		none	0x0		%ATFBIN%
+-	0x03	fip_boot	Binary		none	0x0		fip.bin
+PD	0x02	fsbl_1		Binary		mmc1	boot1		%ATFBIN%
+PD	0x04	fsbl_2		Binary		mmc1	boot2		%ATFBIN%
+PD	0x10	sdcard		RawImage	mmc1	0x0		emmc.img
