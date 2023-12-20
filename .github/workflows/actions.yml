@@ -1,0 +1,29 @@
+name: Sample tarball test
+# Workflow file for tarball
+on:
+  push:
+    branches:
+    	- main
+
+
+jobs:
+  deploy:
+    name: Create Tarball
+    runs-on: "ubuntu-latest"
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+          submodules: recursive
+
+    - name: Creating Tarball
+      run:  |
+      	tar -czvf linux_package.tar.gz .
+      working-directory: ${{ github.workspace }}
+
+    - name: Upload Tarball
+      uses: actions/upload-artifact@v2
+      with:
+        name: linux_package
+        path: linux_package.tar.gz
