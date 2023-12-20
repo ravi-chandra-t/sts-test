@@ -2,8 +2,6 @@ name: Sample tarball test
 # Workflow file for tarball
 on:
   push:
-    branches:
-    	-main
 
 
 jobs:
