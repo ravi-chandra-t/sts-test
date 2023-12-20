@@ -16,7 +16,7 @@ jobs:
           submodules: recursive
 
     - name: Creating Tarball
-      run: git archive --format=tar.gz -o linux_package.tar.gz .
+      run: git archive --format=tar.gz -o linux_package.tar.gz --prefix=sts-test/ main
       working-directory: ${{ github.workspace }}
 
     - name: Upload Tarball
